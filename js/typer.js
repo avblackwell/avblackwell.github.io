@@ -1,67 +1,70 @@
-// utilities
-var get = function (selector, scope) {
-  scope = scope ? scope : document;
-  return scope.querySelector(selector);
-};
+function setupTypewriter(t) {
+  var HTML = t.innerHTML;
 
-var getAll = function (selector, scope) {
-  scope = scope ? scope : document;
-  return scope.querySelectorAll(selector);
-};
+  t.innerHTML = "";
 
-// setup type effect
-if (document.getElementsByClassName('demo').length > 0) {
-  var i = 0;
-  var txt = `python hello.py
+  var cursorPosition = 0,
+      tag = "",
+      writingTag = false,
+      tagOpen = false,
+      typeSpeed = 100,
+    tempTypeSpeed = 0;
 
-            I am a 21 year old aspiring web developer studying at Indiana University.
+  var type = function() {
+    
+      if (writingTag === true) {
+          tag += HTML[cursorPosition];
+      }
 
-            I am currently looking for potential clients that need an updated website. 
-  
-            My skillset includes:
-            - HTML/CSS
-            - Javascript Basics
-            - Python
-            - Graphic Design
-            - Responsive Design
-            - Search Engine Optimization
-            - Back End Basics
-            - Testing and Debugging
+      if (HTML[cursorPosition] === "<") {
+          tempTypeSpeed = 0;
+          if (tagOpen) {
+              tagOpen = false;
+              writingTag = true;
+          } else {
+              tag = "";
+              tagOpen = true;
+              writingTag = true;
+              tag += HTML[cursorPosition];
+          }
+      }
+      if (!writingTag && tagOpen) {
+          tag.innerHTML += HTML[cursorPosition];
+      }
+      if (!writingTag && !tagOpen) {
+          if (HTML[cursorPosition] === " ") {
+              tempTypeSpeed = 0;
+          }
+          else {
+              tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+          }
+          t.innerHTML += HTML[cursorPosition];
+      }
+      if (writingTag === true && HTML[cursorPosition] === ">") {
+          tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+          writingTag = false;
+          if (tagOpen) {
+              var newSpan = document.createElement("span");
+              t.appendChild(newSpan);
+              newSpan.innerHTML = tag;
+              tag = newSpan.firstChild;
+          }
+      }
 
-            `;
-  var speed = 20;
+      cursorPosition += 1;
+      if (cursorPosition < HTML.length - 1) {
+          setTimeout(type, tempTypeSpeed);
+      }
 
-  function typeItOut () {
-    if (i < txt.length) {
-      document.getElementsByClassName('demo')[0].innerHTML += txt.charAt(i);
-      i++;
-      setTimeout(typeItOut, speed);
-    }
-  }
+  };
 
-  setTimeout(typeItOut, 1800);
+  return {
+      type: type
+  };
 }
 
+var typer = document.getElementById('typewriter');
 
+typewriter = setupTypewriter(typewriter);
 
- 
-
-  
-
-// responsive navigation
-var topNav = get('.menu');
-var icon = get('.toggle');
-
-window.addEventListener('load', function(){
-  function showNav() {
-    if (topNav.className === 'menu') {
-      topNav.className += ' responsive';
-      icon.className += ' open';
-    } else {
-      topNav.className = 'menu';
-      icon.classList.remove('open');
-    }
-  }
-  icon.addEventListener('click', showNav);
-});
-
+typewriter.type();

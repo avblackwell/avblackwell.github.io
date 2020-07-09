@@ -22,9 +22,24 @@
       <p class="hero__description">Informatics Student</p>
     </div>
     <div class="hero__terminal">
-      <pre>
-        <!-- Javascript plugin here emulates terminal execute-->
-        <code class="shell-session demo">avblackwell ~ $ </code>
+      <pre id="typewriter">
+        Hold on, give me a second. I just have to finish these last few lines.
+
+
+        <span class="var-highlight">var</span> webDeveloper = {
+            firstName: <span class="string-highlight">'Alexander'</span>,
+            lastName: <span class="string-highlight">'Blackwell'</span>,
+            age: <span class="string-highlight">21</span>,
+            school: <span class="string-highlight">'Indiana University'</span>,
+            location: <span class="string-highlight">'Bloomington, Indiana'</span>,
+            skills:[<span class="string-highlight">'Javascript'</span>,<span class="string-highlight">'HTML'</span>,<span class="string-highlight">'CSS'</span>,<span class="string-highlight">'Graphic Design'</span>,<span class="string-highlight">'Python'</span>],
+            status: <span class="string-highlight">'unemployed'</span>;
+        }; 
+        
+        if (webDeveloper.status == 'unemployed') {
+          alert('I will work for coffee');
+        };
+
       </pre>
     </div>
 
@@ -71,7 +86,7 @@
           <img class="small" src="images/headshot.svg" alt="Alex Blackwell Headshot">
           </div>
           <div class="contact__detail">
-            <form action="mailto:blackwellalex0@gmail.com" method="post" enctype="text/plain"class="resume">      
+            <form action="mailto:blackwellalex0@gmail.com" class="resume">      
               <input name="name" type="text" class="input" placeholder="Name" />   
               <input name="email" type="text" class="input" placeholder="Email" />
               <textarea name="text" class="input" placeholder="Say Hi!"></textarea>
