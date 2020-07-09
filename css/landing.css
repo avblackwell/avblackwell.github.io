@@ -162,6 +162,10 @@ textarea {
   .hero__terminal {
     width: 70%;
   }
+
+  .hero__terminal pre {
+    font-size: .5rem;
+  }
   
   .project, .contact, .contact__section__item {
     flex-direction: column;
