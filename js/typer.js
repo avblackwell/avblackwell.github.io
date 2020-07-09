@@ -1,15 +1,17 @@
+"use strict";
+
 // utilities
-var get = function (selector, scope) {
+var get = function get(selector, scope) {
   scope = scope ? scope : document;
   return scope.querySelector(selector);
 };
 
-var getAll = function (selector, scope) {
+var getAll = function getAll(selector, scope) {
   scope = scope ? scope : document;
   return scope.querySelectorAll(selector);
-};
+}; // setup type effect
 
-// setup type effect
+
 if (document.getElementsByClassName('demo').length > 0) {
   var i = 0;
   var txt = `python hello.py
@@ -31,7 +33,7 @@ if (document.getElementsByClassName('demo').length > 0) {
             `;
   var speed = 20;
 
-  function typeItOut () {
+  function typeItOut() {
     if (i < txt.length) {
       document.getElementsByClassName('demo')[0].innerHTML += txt.charAt(i);
       i++;
@@ -40,19 +42,12 @@ if (document.getElementsByClassName('demo').length > 0) {
   }
 
   setTimeout(typeItOut, 1800);
-}
+} // responsive navigation
 
 
-
- 
-
-  
-
-// responsive navigation
 var topNav = get('.menu');
 var icon = get('.toggle');
-
-window.addEventListener('load', function(){
+window.addEventListener('load', function () {
   function showNav() {
     if (topNav.className === 'menu') {
       topNav.className += ' responsive';
@@ -62,6 +57,6 @@ window.addEventListener('load', function(){
       icon.classList.remove('open');
     }
   }
+
   icon.addEventListener('click', showNav);
 });
-
