@@ -31,7 +31,7 @@ if (document.getElementsByClassName('demo').length > 0) {
             - Testing and Debugging
 
             `;
-  var speed = 20;
+  var speed = 10;
 
   function typeItOut() {
     if (i < txt.length) {
