@@ -1,4 +1,4 @@
-"use strict";
+
 
 // utilities
 var get = function get(selector, scope) {
@@ -31,7 +31,7 @@ if (document.getElementsByClassName('demo').length > 0) {
             - Testing and Debugging
 
             `;
-  var speed = 10;
+  var speed = 1;
 
   function typeItOut() {
     if (i < txt.length) {
