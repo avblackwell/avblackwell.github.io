@@ -13,11 +13,8 @@ var getAll = function (selector, scope) {
 if (document.getElementsByClassName('demo').length > 0) {
   var i = 0;
   var txt = `python hello.py
-
             I am a 21 year old aspiring web developer studying at Indiana University.
-
             I am currently looking for potential clients that need an updated website. 
-  
             My skillset includes:
             - HTML/CSS
             - Javascript Basics
@@ -27,7 +24,6 @@ if (document.getElementsByClassName('demo').length > 0) {
             - Search Engine Optimization
             - Back End Basics
             - Testing and Debugging
-
             `;
   var speed = 10;
 
