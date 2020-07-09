@@ -35,7 +35,7 @@ nav {
 .hero__terminal pre {
   white-space: pre-line;
   padding-top: 1rem;
-  font: 2rem monospace;
+  font: .9rem monospace;
 }
 
 
