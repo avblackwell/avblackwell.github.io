@@ -28,7 +28,7 @@ nav {
   padding: 0 1rem;
   border-radius: 4px;
   background-color: #232323;
-  min-height: 350px;
+  min-height: 375px;
   box-shadow: 0px 12px 36.8px 9.2px rgba(0, 0, 0, 0.1);
 }
 
@@ -38,8 +38,21 @@ nav {
   font: 1.2rem monospace;
 }
 
+.var-highlight {
+  color: var(--accent-color);
+}
 
+.string-highlight {
+  color: #75C0D1;
+}
 
+.int-highlight {
+  color: #F2E635;
+}
+
+.bool-highlight {
+  color: #C169FF;
+}
 /* project section */
 .project {
   display: flex;

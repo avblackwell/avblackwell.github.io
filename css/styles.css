@@ -206,7 +206,7 @@ nav {
 
 .footer {
   text-align: center;
-  background-color: var(--accent-color-dark);
+  background-color: var(--dark-gray-color);
   padding: 2rem;
   background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
 }
