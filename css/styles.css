@@ -97,7 +97,7 @@ hr {
 }
 
 .link:hover {
-  color: var(--accent-color);
+  text-decoration: underline;
 }
 
 .link--dark {

@@ -113,9 +113,7 @@ nav {
   box-sizing: border-box;
 }
 
-.input:focus { 
-  border:2px solid var(--accent-color); 
-}
+
 
 textarea {
   height: 150px;
